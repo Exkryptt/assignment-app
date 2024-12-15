@@ -16,7 +16,11 @@ export async function GET(req) {
     // MongoDB Atlas connection
     const url = 'mongodb+srv://mikekazakovas123:Mariusma5*@cluster0.douvo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
     const client = new MongoClient(url);
+<<<<<<< Updated upstream
     const dbName = 'test'; //
+=======
+    const dbName = 'test'; // Your database name
+>>>>>>> Stashed changes
     const collectionName = 'shopping_cart'; // Shopping cart collection
 
     await client.connect();

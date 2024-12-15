@@ -2,20 +2,36 @@
 
 import { useState, useEffect } from 'react';
 import { Box, Typography, Container, Grid, Card, CardContent, Button } from '@mui/material';
+<<<<<<< Updated upstream
 import Header from '../../src/components/Header';
 
 export default function ViewCart() {
   const [cartItems, setCartItems] = useState([]); //store cart items
   const [totalPrice, setTotalPrice] = useState(0); //store total price
+=======
+import Header from '../../src/components/Header'; // Import your Header component
+
+export default function ViewCart() {
+  const [cartItems, setCartItems] = useState([]); // Store cart items
+  const [totalPrice, setTotalPrice] = useState(0); // Store total price
+>>>>>>> Stashed changes
 
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
+<<<<<<< Updated upstream
         const res = await fetch('/api/getCartItems'); //call the API to get cart items
         const data = await res.json();
         if (res.ok) {
           setCartItems(data.items); //store cart items in state
           //calculate total price
+=======
+        const res = await fetch('/api/getCartItems'); // Call the API to get cart items
+        const data = await res.json();
+        if (res.ok) {
+          setCartItems(data.items); // Store cart items in state
+          // Calculate total price
+>>>>>>> Stashed changes
           const total = data.items.reduce((sum, item) => sum + item.price, 0);
           setTotalPrice(total);
         } else {
@@ -26,7 +42,11 @@ export default function ViewCart() {
       }
     };
 
+<<<<<<< Updated upstream
     fetchCartItems();
+=======
+    fetchCartItems(); // Run when the page loads
+>>>>>>> Stashed changes
   }, []);
 
   const handleCheckout = async () => {
@@ -35,8 +55,13 @@ export default function ViewCart() {
       const data = await res.json();
       if (res.ok) {
         alert('Order placed successfully! Check your email for confirmation.');
+<<<<<<< Updated upstream
         setCartItems([]); //clear cart after checkout
         setTotalPrice(0); //reset total price
+=======
+        setCartItems([]); // Clear cart after checkout
+        setTotalPrice(0); // Reset total price
+>>>>>>> Stashed changes
       } else {
         alert(data.error || 'Failed to place order.');
       }
@@ -48,7 +73,11 @@ export default function ViewCart() {
 
   return (
     <Container component="main" maxWidth="lg" sx={{ mt: 4 }}>
+<<<<<<< Updated upstream
       <Header /> {}
+=======
+      <Header /> {/* Include the Header component */}
+>>>>>>> Stashed changes
       <Typography variant="h4" align="center" sx={{ mb: 4 }}>
         Your Shopping Cart
       </Typography>

@@ -2,18 +2,32 @@
 
 import { useState, useEffect } from 'react';
 import { Box, Typography, Container, Grid, Card, CardContent } from '@mui/material';
+<<<<<<< Updated upstream
 import Header from '../../src/components/Header';
 
 export default function ManagerDashboard() {
   const [orders, setOrders] = useState([]); //state to store orders
+=======
+import Header from '../../src/components/Header'; // Import the Header component
+
+export default function ManagerDashboard() {
+  const [orders, setOrders] = useState([]); // State to store orders
+>>>>>>> Stashed changes
 
   useEffect(() => {
     const fetchOrders = async () => {
       try {
+<<<<<<< Updated upstream
         const res = await fetch('/api/getOrders'); //fetch orders from the API
         const data = await res.json();
         if (res.ok) {
           setOrders(data.orders); //store orders in state
+=======
+        const res = await fetch('/api/getOrders'); // Fetch orders from the API
+        const data = await res.json();
+        if (res.ok) {
+          setOrders(data.orders); // Store orders in state
+>>>>>>> Stashed changes
         } else {
           console.error(data.error || 'Failed to fetch orders');
         }
@@ -22,7 +36,11 @@ export default function ManagerDashboard() {
       }
     };
 
+<<<<<<< Updated upstream
     fetchOrders(); //fetch orders
+=======
+    fetchOrders(); // Fetch orders when the page loads
+>>>>>>> Stashed changes
   }, []);
 
   return (

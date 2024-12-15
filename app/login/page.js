@@ -20,7 +20,11 @@ export default function LoginPage() {
     if (res.ok) {
       const data = await res.json();
 
+<<<<<<< Updated upstream
       //redirect based on user role
+=======
+      // Redirect based on user role
+>>>>>>> Stashed changes
       if (data.role === 'manager') {
         window.location.href = '/manager-dashboard';
       } else if (data.role === 'customer') {
